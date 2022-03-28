@@ -18,16 +18,16 @@ const randomText = () => {
  return c
 }
 
-const bindEventUpdate = () => {
-  let btn = e('#b')
+const bindEventUpdate = (element, callback) => {
+  let btn = e(element)
   
   btn.addEventListener('click', () => {
-    btn.innerText = randomText()
+    btn.innerText = callback()
   })
 }
 
 const bindEvents = () => {
-  bindEventUpdate()
+  bindEventUpdate('#b', randomText)
 }
 
 const __main = () => {
