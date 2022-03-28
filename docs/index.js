@@ -20,10 +20,9 @@ const randomText = () => {
 
 const bindEventUpdate = () => {
   let btn = e('#b')
-  let c = randomText()
   
   btn.addEventListener('click', () => {
-    btn.innerText = c
+    btn.innerText = randomText()
   })
 }
 
