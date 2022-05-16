@@ -12,7 +12,9 @@ const config = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase:path.join(__dirname,"src"), 
+    static: {
+      directory: path.resolve(__dirname, "docs"),
+    },
     open: true,
     host: "localhost",
   },
@@ -23,7 +25,7 @@ const config = {
   module: {
     rules: [
       {
-        test:/\css$/i,
+        test:/\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
       {
