@@ -15,15 +15,8 @@ const config = {
     filename: "[name].bundle.js",
     // clean: true
   },
-  devServer: {
-<<<<<<< HEAD
-    // contentBase:path.join(__dirname,"src"), 
+  devServer: { 
     static: "./dist",
-=======
-    static: {
-      directory: path.resolve(__dirname, "docs"),
-    },
->>>>>>> 11795eeaa764ba48b6cd1c10b5368ceed23dbaf5
     open: true,
     host: "localhost",
   },
