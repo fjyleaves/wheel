@@ -1,6 +1,7 @@
 // import _ from 'lodash'
-import './style.css'
-let content = ['哦吼！！！', '让你点了么！！！', '介里似吧特嗯！！！', '憋点了。', '咋费事儿？']
+import printMe from './print';
+import './style.css';
+let content = ['哦吼!!!', '让你点了么!!!', '介里似吧特嗯!!!', '憋点了。', '咋费事儿？']
 
 const e = function(selector) {
   let element = document.querySelector(selector)
@@ -19,17 +20,28 @@ const randomText = () => {
  return c
 }
 
+const templatebtn = `
+  <button id="b">来了，老弟!!!</button>
+`
+const todo = () => {
+  let body = e('body')
+  body.innerHTML = templatebtn
+}
+
+
 const bindEventUpdate = (element, callback) => {
   let btn = e(element)
   btn.classList.add('b');
   
   btn.addEventListener('click', () => {
     btn.innerText = callback()
+    btn.onclick = printMe
   })
 }
 
 const bindEvents = () => {
-  bindEventUpdate('.b', randomText)
+  todo()
+  bindEventUpdate('#b', randomText)
 }
 
 const __main = () => {
